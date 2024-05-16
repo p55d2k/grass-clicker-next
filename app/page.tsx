@@ -15,7 +15,7 @@ export default function Home() {
   const [amount, setAmount] = useState<number>(0);
   const [grassPerClick, setGrassPerClick] = useState<number>(1);
   const [perSecond, setPerSecond] = useState<number>(0);
-  const [items, setItems] = useState<Item[]>(resetItems());
+  const [items, setItems] = useState<Item[]>(resetItems);
   const [loadedData, setLoadedData] = useState<boolean>(false);
 
   const amountRef = useRef(amount);
@@ -91,6 +91,10 @@ export default function Home() {
           amount={parseInt(amount.toString())}
           perSecond={perSecond}
           grassPerClick={grassPerClick}
+          setAmount={setAmount}
+          setPerSecond={setPerSecond}
+          setGrassPerClick={setGrassPerClick}
+          setItems={setItems}
         />
         <Content
           items={items}

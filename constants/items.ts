@@ -1,7 +1,7 @@
 export interface Item {
   id: number;
   name: string;
-  description: string; 
+  description: string;
   price: number;
   amount: number;
   multiplier: number;
@@ -19,7 +19,7 @@ export interface SaveItem {
   price: number;
 }
 
-export const resetItems = (): Item[] => [
+export const resetItems: Item[] = [
   {
     id: 1,
     name: "Aunty 帮你拿 grass",

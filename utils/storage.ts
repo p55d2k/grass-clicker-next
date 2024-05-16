@@ -1,10 +1,5 @@
 import { Item, SaveItem, resetItems } from "@/constants/items";
 
-export const reset = (localStorage: any) => {
-  localStorage.clear();
-  location.reload();
-};
-
 export const saveGame = (
   items: Item[],
   grass: number,
@@ -12,7 +7,7 @@ export const saveGame = (
   grassPerClick: number,
   localStorage: any
 ) => {
-  let defaultItems: Item[] = resetItems();
+  let defaultItems: Item[] = resetItems;
   let savedItems: SaveItem[] = [];
 
   for (let i = 0; i < defaultItems.length; i++) {
@@ -47,7 +42,7 @@ export const loadGame = (
     try {
       const data = JSON.parse(gameData);
 
-      let defaultItems: Item[] = resetItems();
+      let defaultItems: Item[] = resetItems;
       let items: Item[] = [];
 
       for (let i = 0; i < defaultItems.length; i++) {
