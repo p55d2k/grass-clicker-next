@@ -2,14 +2,7 @@ import { Item, SaveItem, resetItems } from "@/constants/items";
 
 export const reset = (setItems: any, localStorage: any) => {
   setItems(resetItems());
-  localStorage.removeItem("grass");
-  localStorage.removeItem("grasspersecond");
-  localStorage.removeItem("grassperclick");
-  localStorage.removeItem("grassclickmultiplier");
-  localStorage.removeItem("amt");
-  localStorage.removeItem("prices");
-  localStorage.removeItem("multipliers");
-  localStorage.removeItem("saved");
+  localStorage.removeItem("gameData");
   location.reload();
 };
 

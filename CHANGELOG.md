@@ -5,6 +5,7 @@
 - added spacebar to get grass
 - added more items
 - saving system added
+- background image now scrolls
 - updated changelog
 
 ## 0.0.2a (16/05/24)
