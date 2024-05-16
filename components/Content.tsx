@@ -5,8 +5,10 @@ import ShopItem from "./ShopItem";
 
 import Image from "next/image";
 
+import toast from "react-hot-toast";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
+import { useEffect } from "react";
 
 interface ContentProps {
   onClick?: () => void;
@@ -34,6 +36,29 @@ const Content = ({
   useGSAP(() => {
     gsap.to("#grass", { opacity: 1, delay: 0.7, x: 0, y: 0 });
     gsap.to("#shop", { opacity: 1, delay: 1, x: 0, y: 0 });
+  }, []);
+
+  useEffect(() => {
+    const keyDownHandler = (e: any) => {
+      if (e.key === " ") {
+        onClick!();
+        toast.error(
+          "Hey staph it >:((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((",
+          {
+            duration: 10000000000000,
+            style: {
+              minWidth: "100vw",
+            },
+            icon: "😠😠😠😠😠😠😠😠😠😠😠",
+          }
+        );
+      }
+    };
+
+    document.addEventListener("keydown", keyDownHandler);
+    return () => {
+      document.removeEventListener("keydown", keyDownHandler);
+    };
   }, []);
 
   return (

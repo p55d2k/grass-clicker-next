@@ -31,7 +31,6 @@ const ShopItem = ({
         const newItems: Item[] | null = buyItem(
           item,
           items,
-          setItems,
           amount,
           setAmount,
           perSecond,
@@ -41,18 +40,22 @@ const ShopItem = ({
         );
 
         if (newItems === null) {
-          toast.error("You don't have enough grass!");
+          toast.error("You don't have enough grass!", {
+            duration: 2000,
+          });
         } else {
-          toast.success("Item bought!");
+          toast.success("Item bought!", {
+            duration: 2000,
+          });
           setItems(newItems);
         }
       }}
-      className={`w-full bg-white transition-all duration-200 ease-in-out hover:active:scale-95 ${
+      className={`w-full bg-white transition-all duration-200 ease-in-out hover:active:scale-95 select-none ${
         amount < item.price ? "opacity-60 bg-red-500" : "cursor-pointer"
       } bg-opacity-40 p-4 flex flex-col items-center justify-center rounded-lg border-white border-2`}
     >
       <h1 className="text-2xl text-center">{item.name}</h1>
-      <p className="text-sm text-center">{item.description}</p>
+      <p className="text-sm text-center max-w-[80%]">{item.description}</p>
       <div className="flex flex-row space-x-2 divide-x-2 divide-black text-center">
         <p className="text-md">
           Costs&nbsp;

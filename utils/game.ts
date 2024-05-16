@@ -4,13 +4,14 @@ export const addGrassAndCheck = (
   addAmount: number,
   curAmount: number,
   setAmount: any,
-  setItems: any
+  setItems: any,
+  localStorage: any
 ) => {
   setAmount((curAmount: number) => curAmount + addAmount);
-  if (curAmount == Infinity) {
-    alert("You have reached Infinity grass! You win!");
-    reset(setItems);
+  if (curAmount >= 1000000000000000) {
+    alert("You have won the game! Restart?");
+    reset(setItems, localStorage);
   } else if (Number.isNaN(curAmount)) {
-    reset(setItems);
+    reset(setItems, localStorage);
   }
 };

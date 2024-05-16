@@ -1,5 +1,12 @@
 # grass-clicker-next changelog
 
+## 0.0.2b (16/05/24)
+
+- added spacebar to get grass
+- added more items
+- saving system added
+- updated changelog
+
 ## 0.0.2a (16/05/24)
 
 - added license
