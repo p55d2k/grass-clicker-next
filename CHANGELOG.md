@@ -1,5 +1,14 @@
 # grass-clicker-next changelog
 
+## 0.0.2a (16/05/24)
+
+- added license
+- edited readme
+- added animations
+- pricees changed
+- collapsed header
+- updated changelog
+
 ## 0.0.2 (16/05/24)
 
 - added more items

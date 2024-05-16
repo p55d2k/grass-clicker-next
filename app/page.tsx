@@ -15,6 +15,7 @@ export default function Home() {
   const [grassPerClick, setGrassPerClick] = useState<number>(1);
   const [perSecond, setPerSecond] = useState<number>(0);
   const [items, setItems] = useState<Item[]>(resetItems());
+
   const amountRef = useRef(amount);
   const perSecondRef = useRef(perSecond);
   const lastTimeRef = useRef<number>(0);
@@ -48,6 +49,7 @@ export default function Home() {
       cancelAnimationFrame(id);
     };
   }, []);
+
   return (
     <div className="w-full max-h-screen">
       <Image
@@ -59,7 +61,11 @@ export default function Home() {
         className="absolute z-[-4] opacity-80 w-full h-full"
       />
       <div className="h-screen p-3">
-        <Header amount={parseInt(amount.toString())} perSecond={perSecond} />
+        <Header
+          amount={parseInt(amount.toString())}
+          perSecond={perSecond}
+          grassPerClick={grassPerClick}
+        />
         <Content
           items={items}
           setItems={setItems}

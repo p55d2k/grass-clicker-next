@@ -1,22 +1,36 @@
-import React from "react";
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
 
 interface HeaderProps {
   amount: number;
   perSecond: number;
+  grassPerClick: number;
 }
 
-const Header = ({ amount, perSecond }: HeaderProps) => {
+const Header = ({ amount, perSecond, grassPerClick }: HeaderProps) => {
+  useGSAP(() => {
+    gsap.to("#mainheader", { opacity: 1, delay: 0.2, y: 0 });
+    gsap.to("#subtitles", { opacity: 1, delay: 0.4, y: 0 });
+  }, []);
+
   return (
     <header className="p-5 flex flex-col items-center justify-center">
-      <h1 className="text-5xl sm:text-6xl md:text-7xl text-center font-light uppercase">
+      <h1 id="mainheader" className="opacity-0 translate-y-20 text-5xl sm:text-6xl md:text-7xl text-center font-light uppercase">
         grass clicker
       </h1>
-      <p className="text-2xl md:text-3xl text-center pt-2 font-light">
-        Amount of grass: {amount}
-      </p>
-      <p className="text-2xl md:text-3xl text-center font-light">
-        Grass per second: {perSecond}
-      </p>
+      <div id="subtitles" className="opacity-0 translate-y-20 flex flex-col md:flex-row space-y-2 md:space-y-2 md:space-x-2 md:divide-y-0 divide-y-2 md:divide-x-2 divide-black items-center justify-center">
+        <p className="pt-2 text-xl md:text-2xl text-center font-light">
+          Amount of grass: {amount}
+        </p>
+        <p className="pt-2 md:pt-0 md:pl-2 text-xl md:text-2xl text-center font-light">
+          Grass per second: {perSecond}
+        </p>
+        <p className="pt-2 md:pt-0 md:pl-2 text-xl md:text-2xl text-center font-light">
+          Grass per click: {grassPerClick}
+        </p>
+      </div>
     </header>
   );
 };
