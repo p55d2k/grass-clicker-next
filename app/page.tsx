@@ -33,7 +33,15 @@ export default function Home() {
   useEffect(() => {
     const addGrassBasedOnTime = (deltaTime: number) => {
       const grassToAdd = (deltaTime / 1000) * perSecondRef.current;
-      addGrassAndCheck(grassToAdd, amountRef.current, setAmount, localStorage);
+      addGrassAndCheck(
+        grassToAdd,
+        amountRef.current,
+        setAmount,
+        localStorage,
+        setItems,
+        setPerSecond,
+        setGrassPerClick
+      );
     };
 
     const tick = (time: number) => {
@@ -106,7 +114,15 @@ export default function Home() {
           grassPerClick={grassPerClick}
           setGrassPerClick={setGrassPerClick}
           onClick={() =>
-            addGrassAndCheck(grassPerClick, amount, setAmount, localStorage)
+            addGrassAndCheck(
+              grassPerClick,
+              amount,
+              setAmount,
+              localStorage,
+              setItems,
+              setPerSecond,
+              setGrassPerClick
+            )
           }
         />
       </div>
