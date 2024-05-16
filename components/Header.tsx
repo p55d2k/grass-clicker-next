@@ -10,14 +10,12 @@ interface HeaderProps {
   amount: number;
   perSecond: number;
   grassPerClick: number;
-  setItems: (items: Item[]) => void;
 }
 
 const Header = ({
   amount,
   perSecond,
   grassPerClick,
-  setItems,
 }: HeaderProps) => {
   useGSAP(() => {
     gsap.to("#mainheader", { opacity: 1, delay: 0.2, y: 0 });
@@ -55,7 +53,7 @@ const Header = ({
           className="text-lg md:text-2xl text-center font-light hover:text-blue-800 transition-all duration-200 ease-in-out"
           onClick={() => {
             if (confirm("Are you sure you want to reset the game?")) {
-              reset(setItems, localStorage);
+              reset(localStorage);
             }
           }}
         >

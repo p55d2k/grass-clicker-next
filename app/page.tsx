@@ -5,11 +5,11 @@ import { Toaster } from "react-hot-toast";
 import Image from "next/image";
 
 import { addGrassAndCheck } from "@/utils/game";
-import { Item, SaveItem, resetItems } from "@/constants/items";
+import { loadGame, saveGame } from "@/utils/storage";
+import { Item, resetItems } from "@/constants/items";
 
 import Content from "@/components/Content";
 import Header from "@/components/Header";
-import { loadGame, reset, saveGame } from "@/utils/storage";
 
 export default function Home() {
   const [amount, setAmount] = useState<number>(0);
@@ -33,13 +33,7 @@ export default function Home() {
   useEffect(() => {
     const addGrassBasedOnTime = (deltaTime: number) => {
       const grassToAdd = (deltaTime / 1000) * perSecondRef.current;
-      addGrassAndCheck(
-        grassToAdd,
-        amountRef.current,
-        setAmount,
-        setItems,
-        localStorage
-      );
+      addGrassAndCheck(grassToAdd, amountRef.current, setAmount, localStorage);
     };
 
     const tick = (time: number) => {
@@ -97,7 +91,6 @@ export default function Home() {
           amount={parseInt(amount.toString())}
           perSecond={perSecond}
           grassPerClick={grassPerClick}
-          setItems={setItems}
         />
         <Content
           items={items}
@@ -109,13 +102,7 @@ export default function Home() {
           grassPerClick={grassPerClick}
           setGrassPerClick={setGrassPerClick}
           onClick={() =>
-            addGrassAndCheck(
-              grassPerClick,
-              amount,
-              setAmount,
-              setItems,
-              localStorage
-            )
+            addGrassAndCheck(grassPerClick, amount, setAmount, localStorage)
           }
         />
       </div>

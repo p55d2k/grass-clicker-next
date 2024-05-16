@@ -4,14 +4,13 @@ export const addGrassAndCheck = (
   addAmount: number,
   curAmount: number,
   setAmount: any,
-  setItems: any,
   localStorage: any
 ) => {
   setAmount((curAmount: number) => curAmount + addAmount);
   if (curAmount >= 1000000000000000) {
     alert("You have won the game! Restart?");
-    reset(setItems, localStorage);
+    reset(localStorage);
   } else if (Number.isNaN(curAmount)) {
-    reset(setItems, localStorage);
+    reset(localStorage);
   }
 };
