@@ -1,7 +1,7 @@
 import { Item, SaveItem, resetItems } from "@/constants/items";
 
 export const reset = (localStorage: any) => {
-  saveGame(resetItems(), 0, 0, 1, localStorage);
+  localStorage.clear();
   location.reload();
 };
 
