@@ -62,6 +62,7 @@ const Content = ({
                 if (newItems === null) {
                   toast.error("You don't have enough grass!");
                 } else {
+                  toast.success("Item bought!")
                   setItems(newItems);
                 }
               }}

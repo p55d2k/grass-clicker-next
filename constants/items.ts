@@ -37,7 +37,7 @@ export const resetItems = (): Item[] => [
   },
   {
     id: 2,
-    name: "Hire a workman  ",
+    name: "Hire a workman",
     description: "Hire a workman to help you click grass! +1 grass per click!",
     price: 50,
     multiplier: 1.2,
@@ -52,6 +52,42 @@ export const resetItems = (): Item[] => [
       setGrassPerClick(grassPerClick + 1);
     },
   },
+  {
+    id: 3,
+    name: "Farms",
+    description:
+      "You get a grass farm to autofarm more grass! +5 grass per second!",
+    price: 75,
+    multiplier: 1.2,
+    unlocked: false,
+    amount: 0,
+    effects: (
+      perSecond: number,
+      setPerSecond: any,
+      grassPerClick: number,
+      setGrassPerClick: any
+    ) => {
+      setPerSecond(perSecond + 5);
+    },
+  },
+  {
+    id: 4,
+    name: "Nicer grass",
+    description:
+      "Grass feels nicer to touch, so you get more grass. +5 grass per click!",
+    price: 200,
+    multiplier: 1.2,
+    unlocked: false,
+    amount: 0,
+    effects: (
+      perSecond: number,
+      setPerSecond: any,
+      grassPerClick: number,
+      setGrassPerClick: any
+    ) => {
+      setPerSecond(perSecond + 5);
+    },
+  },
 ];
 
 export const buyItem = (
@@ -63,7 +99,7 @@ export const buyItem = (
   perSecond: number,
   setPerSecond: any,
   grassPerClick: number,
-  setGrassPerClick: any,
+  setGrassPerClick: any
 ): Item[] | null => {
   if (grass < item.price) {
     return null;
