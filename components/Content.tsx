@@ -65,7 +65,7 @@ const Content = ({
     <div className="h-screen w-full md:max-h-[600px] overflow-y-auto p-4 md:p-6 lg:p-8 flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4 lg:space-x-7 xl:space-x-10 items-start justify-start">
       <div
         id="grass"
-        className="opacity-0 translate-y-20 md:translate-y-0 md:-translate-x-20 w-full h-[200px] md:h-[500px] cursor-pointer"
+        className="opacity-0 translate-y-20 md:translate-y-0 md:-translate-x-20 w-full md:w-1/3 h-[200px] md:h-[500px] cursor-pointer"
         onClick={onClick}
       >
         <Image
@@ -74,12 +74,12 @@ const Content = ({
           height={20}
           width={20}
           unoptimized
-          className="w-full h-full border-white border-2 rounded-lg hover:active:scale-95 transition-all duration-100 ease-in-out"
+          className="w-full h-full border-white border-2 rounded-lg hover:scale-95 transition-all duration-100 ease-in-out"
         />
       </div>
       <div
         id="shop"
-        className="opacity-0 -translate-y-20 md:translate-y-0 md:translate-x-20 w-full h-[400px] md:h-[500px] rounded-lg bg-green-500 bg-opacity-50 border-white border-2 border-opacity-70 p-1 overflow-y-scroll"
+        className="opacity-0 -translate-y-20 md:translate-y-0 md:translate-x-20 w-full md:w-2/3 h-[400px] md:h-[500px] rounded-lg bg-green-500 bg-opacity-20 border-white border-2 border-opacity-70 p-1 overflow-y-scroll"
       >
         <div className="flex flex-col w-full space-y-2 p-2">
           {items.map((item, index) => (

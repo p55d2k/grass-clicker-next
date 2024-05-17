@@ -87,12 +87,12 @@ export default function Home() {
   return (
     <div className="w-full">
       <Image
-        unoptimized
         alt="Grass Clicker Background"
         src="/background.png"
-        layout="fill"
-        objectFit="cover"
-        className="absolute z-[-4] opacity-80 w-full min-h-[150vh]"
+        width={100}
+        height={100}
+        unoptimized
+        className="absolute z-[-4] opacity-70 w-full min-h-[160vmin]"
       />
       <div className="h-screen p-3">
         <Header

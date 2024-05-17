@@ -50,19 +50,21 @@ const ShopItem = ({
           setItems(newItems);
         }
       }}
-      className={`w-full bg-white transition-all duration-200 ease-in-out hover:active:scale-95 select-none ${
-        amount < item.price ? "opacity-60 bg-red-500" : "cursor-pointer"
-      } bg-opacity-40 p-4 flex flex-col items-center justify-center rounded-lg border-white border-2`}
+      className={`w-full transition-all duration-200 ease-in-out hover:bg-opacity-50 hover:active:scale-95 select-none ${
+        amount < item.price
+          ? "opacity-60 bg-white"
+          : "cursor-pointer bg-yellow-200"
+      } bg-opacity-40 p-4 flex flex-row items-center justify-center rounded-lg min-h-[100px]`}
     >
-      <h1 className="text-2xl text-center">{item.name}</h1>
-      <p className="text-sm text-center max-w-[80%]">{item.description}</p>
-      <div className="flex flex-row space-x-2 divide-x-2 divide-black text-center">
-        <p className="text-md">
-          Costs&nbsp;
-          <span className="text-blue-500">{item.price}</span>
-          &nbsp;grass
-        </p>
-        <p className="text-md pl-2 text-blue-500">Amount: {item.amount}</p>
+      <div className="w-1/6 text-[#3C6B0C] flex text-start items-end justify-start text-3xl">
+        <span className="text-5xl">{item.amount}</span>x
+      </div>
+      <div className="flex items-start justify-start flex-col w-full">
+        <h1 className="text-[27px] text-left">{item.name}</h1>
+        <p className="text-md text-left max-w-[80%] leading-5">{item.description}</p>
+      </div>
+      <div className="w-1/5 flex text-right items-end justify-end text-4xl text-[#3C6B0C]">
+        {item.price}G
       </div>
     </div>
   );
