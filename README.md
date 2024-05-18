@@ -23,6 +23,7 @@
 ## About 📖
 
 Grass-Clicker-Next is a child of [Grass-Clicker v1.0](https://grassclicker.vercel.app/), and is a useless thing. Please do not abuse our code (or do weird inspecting stuff to our website)...
+The new version is [Grass-Clicker v2.0](https://gcnext.vercel.app)
 
 ## Requirements 📦
 
